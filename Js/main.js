@@ -11,6 +11,73 @@ const btn = document.querySelector('.submituploadbtn')
 
 downloadBox.style.display = 'none'
 
+// Subscribe to real-time broadcast
+const channel = supabase.channel('file-share')
+
+channel.on('broadcast', { event: 'new-file' }, ({ payload }) => {
+  showDownloadBox(payload.url, payload.name, payload.fileName)
+}).subscribe()
+
+function showDownloadBox(publicUrl, originalName, fileName) {
+  downloadBox.style.display = 'flex'
+
+  // Remove old copy button and timer if any
+  downloadBox.querySelectorAll('.copy-btn, .timer-el').forEach(el => el.remove())
+
+  const link = downloadBox.querySelector('a')
+  link.textContent = originalName
+  link.href = '#'
+  link.onclick = async (e) => {
+    e.preventDefault()
+    const res = await fetch(publicUrl)
+    const blob = await res.blob()
+    const blobUrl = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = blobUrl
+    a.download = originalName
+    a.click()
+    URL.revokeObjectURL(blobUrl)
+  }
+
+  // Copy link button
+  const copyBtn = document.createElement('button')
+  copyBtn.textContent = '📋 Copy Link'
+  copyBtn.className = 'submituploadbtn copy-btn'
+  copyBtn.onclick = () => {
+    navigator.clipboard.writeText(publicUrl)
+    copyBtn.textContent = '✅ Copied!'
+    setTimeout(() => copyBtn.textContent = '📋 Copy Link', 2000)
+  }
+  downloadBox.appendChild(copyBtn)
+
+  // Countdown timer — delete after 5 mins
+  const timerEl = document.createElement('p')
+  timerEl.className = 'timer-el'
+  timerEl.style.color = 'limegreen'
+  timerEl.style.marginTop = '10px'
+  timerEl.style.fontSize = '13px'
+  downloadBox.appendChild(timerEl)
+
+  let secondsLeft = 300
+  const countdown = setInterval(async () => {
+    secondsLeft--
+    const mins = Math.floor(secondsLeft / 60)
+    const secs = secondsLeft % 60
+    timerEl.textContent = `⏳ Link expires in ${mins}:${secs.toString().padStart(2, '0')}`
+
+    if (secondsLeft <= 0) {
+      clearInterval(countdown)
+      await supabase.storage.from('files').remove([fileName])
+      downloadBox.style.display = 'none'
+      link.href = '#'
+      link.textContent = 'file_name.zip'
+      copyBtn.remove()
+      timerEl.remove()
+      form.reset()
+    }
+  }, 1000)
+}
+
 form.addEventListener('submit', async (e) => {
   e.preventDefault()
 
@@ -39,68 +106,13 @@ form.addEventListener('submit', async (e) => {
 
   const publicUrl = urlData.publicUrl
 
-  downloadBox.style.display = 'flex'
-
-  // Remove any previous copy button
-  const oldBtn = downloadBox.querySelector('.copy-btn')
-  if (oldBtn) oldBtn.remove()
-
-  const link = downloadBox.querySelector('a')
-  link.textContent = file.name
-  link.href = '#'
-  link.onclick = async (e) => {
-    e.preventDefault()
-    const res = await fetch(publicUrl)
-    const blob = await res.blob()
-    const blobUrl = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = blobUrl
-    a.download = file.name
-    a.click()
-    URL.revokeObjectURL(blobUrl)
-  }
-
-  // Add copy link button
-  const copyBtn = document.createElement('button')
-  copyBtn.textContent = '📋 Copy Link'
-  copyBtn.className = 'submituploadbtn copy-btn'
-  copyBtn.onclick = () => {
-    navigator.clipboard.writeText(publicUrl)
-    copyBtn.textContent = '✅ Copied!'
-    setTimeout(() => copyBtn.textContent = '📋 Copy Link', 2000)
-  }
-  downloadBox.appendChild(copyBtn)
+  // Broadcast to all connected clients
+  await channel.send({
+    type: 'broadcast',
+    event: 'new-file',
+    payload: { url: publicUrl, name: file.name, fileName }
+  })
 
   btn.innerHTML = 'Upload <i class="fa-solid fa-upload"></i>'
   btn.disabled = false
-
-  // Countdown timer — delete file after 5 minutes
-  const timerEl = document.createElement('p')
-  timerEl.style.color = 'limegreen'
-  timerEl.style.marginTop = '10px'
-  timerEl.style.fontSize = '13px'
-  downloadBox.appendChild(timerEl)
-
-  let secondsLeft = 300
-  const countdown = setInterval(async () => {
-    secondsLeft--
-    const mins = Math.floor(secondsLeft / 60)
-    const secs = secondsLeft % 60
-    timerEl.textContent = `⏳ Link expires in ${mins}:${secs.toString().padStart(2, '0')}`
-
-    if (secondsLeft <= 0) {
-      clearInterval(countdown)
-
-      // Delete file from Supabase
-      await supabase.storage.from('files').remove([fileName])
-
-      // Reset UI
-      downloadBox.style.display = 'none'
-      link.href = '#'
-      link.textContent = 'file_name.zip'
-      copyBtn.remove()
-      timerEl.remove()
-      form.reset()
-    }
-  }, 1000)
 })
