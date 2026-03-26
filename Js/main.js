@@ -113,6 +113,9 @@ form.addEventListener('submit', async (e) => {
     payload: { url: publicUrl, name: file.name, fileName }
   })
 
+  // Also show it for the uploader
+showDownloadBox(publicUrl, file.name, fileName)
+
   btn.innerHTML = 'Upload <i class="fa-solid fa-upload"></i>'
   btn.disabled = false
 })
