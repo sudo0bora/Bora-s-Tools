@@ -18,23 +18,34 @@
         <span class="r">R</span>
         <span class="i2">I</span>
         <span class="n">N</span>
-        <span class="g">G</span>
+        <span class="g">G</span>    
     </div>
 </header>
 <body>
 <main>
-    <h1 id="flicker">Upload File</h1>
+    <h1 id="flicker">Share File</h1>
     <div class="upload-box">
-        <span class="info">Upload Files Privately</span>
+        <span class="info">Share Files Privately</span>
         <form>
-            <input type="file" name="file" required>
+            <label for="fileInput" class="submituploadbtn">
+                Choose File <i class="fa-solid fa-folder-open"></i>
+            </label>
+            <input type="file" id="fileInput" name="file" required>
             <button type="submit" class="submituploadbtn">Upload <i class="fa-solid fa-upload"></i></button>
         </form>
+        <span class="imageinfo" id="imagename"></span>
     </div>
     <h1 id="flicker">Download File</h1>
         <div class="download-box">
-            <span>Download ready <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="downloadindicator">Download ready <i class="fa-solid fa-arrow-right"></i></span>
             <a href="#">file_name.zip</a>
+            <div class="copy-download-link">
+                <button class="copy-btn" id="copyBtn">Copy Link <i class="fa-solid fa-copy"></i></button>
+            </div>
+            <span id="timer" class="timerspan">00:00</span>
+            <div class="delete-share">
+                <button class="delete-btn">Delete Share <i class="fa-solid fa-trash"></i></button>
+            </div>
         </div>
 </main> 
 </body>
