@@ -35,7 +35,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-color: #444;
     padding: 20px;
     border-radius: 10px;
@@ -55,6 +54,10 @@ main {
         }
     }
 }
+input[type="file"] {
+    display: none;
+}
+
 #flicker {
     margin-top: 40px;
 }
@@ -80,7 +83,7 @@ main {
             transform: translateY(-5px);
         }
     }
-    span {
+    .downloadindicator {
         font-size: 14px;
         color: limegreen;
         transition: all 0.3s ease;
@@ -92,7 +95,56 @@ main {
         }
     }
 }
+.copy-download-link, .delete-share {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    .timerspan {
+        font-size: 12px;
+        color: limegreen;
+    }
+    .timerspan span:hover {
+            color: #55ff55;
+            text-shadow: 0 0 10px limegreen, 0 0 20px limegreen, 0 0 30px limegreen;
+            transform: translateY(-5px);
+            cursor: pointer;
+    }
+    .copy-btn{
+        background-color: limegreen;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: #55ff55;
+            transform: translateY(-5px);
+            box-shadow:  0 5px 15px rgba(0, 255, 0, 0.3);
+            color: white;
+        }
+    }
+    .delete-btn {
+        background-color: limegreen;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: red;
+            transform: translateY(-5px);
+            box-shadow:  0 5px 15px rgba(255, 0, 0, 0.3);
+            color: white;
+        }
+    }
+}
 .submituploadbtn {
+    display: inline-block;
     background-color: limegreen;
     color: #333;
     border: none;
@@ -108,6 +160,15 @@ main {
         color: white;
     }
 
+}
+.submituploadbtn:nth-child(3) {
+    font-size: 19px;
+}
+.imageinfo {
+    font-size: 14px;
+    color: limegreen;
+    margin-top: 10px;
+    opacity: 0.7;
 }
 ::file-selector-button {
   background-color: limegreen;
@@ -184,3 +245,122 @@ main {
 .waveanimheader .i2 { animation-delay: 0.9s; }
 .waveanimheader .n { animation-delay: 1s; }
 .waveanimheader .g { animation-delay: 1.1s; }
+
+
+
+@media screen and (max-width: 768px) {
+    .waveanimheader span {
+        font-size: 1.5rem;
+    }
+
+    main {
+        height: auto;
+        padding: 30px 15px;
+    }
+    .submituploadbtn:nth-child(3) {
+        font-size: 16px;
+    }
+
+    .upload-box, .download-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .download-box {
+        flex-direction: column;
+    }
+
+    #flicker {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .copy-btn, .delete-btn, .submituploadbtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    ::file-selector-button {
+        padding: 8px 14px;
+        margin: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+    .waveanimheader span {
+        font-size: 1.4rem;
+    }
+    .submituploadbtn:nth-child(3) {
+        font-size: 16px;
+    }
+
+    main {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .upload-box, .download-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .download-box {
+        flex-direction: column;
+    }
+
+    #flicker {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .copy-btn, .delete-btn, .submituploadbtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    ::file-selector-button {
+        padding: 8px 14px;
+        margin: 12px;
+    }
+    
+}
+
+
+@media screen and (max-width: 375px) {
+    .waveanimheader span {
+        font-size: 1.3rem;
+    }
+    .submituploadbtn:nth-child(3) {
+        font-size: 16px;
+    }
+
+    main {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .upload-box, .download-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .download-box {
+        flex-direction: column;
+    }
+
+    #flicker {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .copy-btn, .delete-btn, .submituploadbtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    ::file-selector-button {
+        padding: 8px 14px;
+        margin: 12px;
+    }
+}
