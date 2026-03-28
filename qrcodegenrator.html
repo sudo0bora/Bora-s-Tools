@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="Styles/global.css">
+    <link rel="stylesheet" href="Styles/qrcodegenerator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="waveanimheader" onclick="location.reload()" >  
+            <span class="q">Q</span>
+            <span class="r1">R</span>
+            <span class="space">-</span>
+            <span class="c">C</span>
+            <span class="o">O</span>
+            <span class="d">D</span>
+            <span class="e">E</span>
+            <span class="space2">-</span>
+            <span class="g">G</span>
+            <span class="e2">E</span>
+            <span class="n">N</span>
+            <span class="e3">E</span>
+            <span class="r2">R</span>
+            <span class="a">A</span>
+            <span class="t">T</span>
+            <span class="o2">O</span>
+            <span class="r3">R</span>
+        </div>
+    <div class="nav">
+        <a class="filesharingtag" href="index.html">FILE SHARING</a>
+    </div>
+    </header>
+    <main>
+        <h1 class="flicker">QR Code Generator</h1>
+        <div class="qr-generator-box">
+            <span class="info">Generate QR Codes for Your Files</span>
+            <form id="fileForm" enctype="multipart/form-data">
+                <label for="fileInput" class="submituploadbtn">
+                    Choose File <i class="fa-solid fa-folder-open"></i>
+                </label>
+                <input type="file" id="fileInput" name="file" required>
+                <button type="submit" class="submituploadbtn">Generate QR Code <i class="fa-solid fa-qrcode"></i></button>
+            </form>
+            <span class="imageinfo" id="imagename"></span>
+        </div>
+
+        <div class="generated-qr">
+                <h1 class="flicker">Generated QR Code</h1>
+                <div id="qrCodeContainer"></div>
+                <button class="submituploadbtn" id="downloadqrbtn">Download QR Code <i class="fa-solid fa-download"></i></button>
+                <button class="delete-btn">Delete Share <i class="fa-solid fa-trash"></i></button>
+        </div>
+
+
+        <h1 class="flicker">Or enter a URL</h1>
+        <div class="qr-generator-box">
+            <span class="info">Enter a URL to generate a QR code for it</span>
+            <form id="urlForm">
+                <input type="text" id="urlInput" name="url" placeholder="Enter URL here" required>
+                <button type="submit" class="submituploadbtn">Generate QR Code <i class="fa-solid fa-qrcode"></i></button>
+            </form>
+        </div>
+
+        <div class="link-generated-qr">
+            <h1 class="flicker">Generated QR Code</h1>
+            <div id="LinkqrCodeContainer"></div>
+            <button class="submituploadbtn" id="downloadqrlinkbtn">Download QR Code <i class="fa-solid fa-download"></i></button>
+            <button class="delete-btn">Delete Share <i class="fa-solid fa-trash"></i></button>
+        </div>
+            
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script type="module" src="Js/generateqr.js"></script>
+</body>
+</html>
