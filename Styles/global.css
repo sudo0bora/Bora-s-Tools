@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: limegreen;
+    background-color: #222;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+header a {
+    color: limegreen;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    color: #55ff55;
+    text-shadow: 0 0 10px limegreen, 0 0 20px limegreen, 0 0 30px limegreen;
+}
+.qrcodegeneratortag, .filesharingtag {
+    color: rgb(37, 150, 37);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px 60px;
+    width: 100%;
+}
+
+.submituploadbtn {
+    display: inline-block;
+    background-color: limegreen;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.submituploadbtn:hover {
+    background-color: #55ff55;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    color: white;
+}
+
+.submituploadbtn:nth-child(2),
+.submituploadbtn:nth-child(3) {
+    font-size: 19px;
+}
+
+.upload-box,
+.qr-generator-box,
+.generated-qr,
+.link-generated-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.upload-box .info,
+.qr-generator-box .info,
+.generated-qr .info,
+.link-generated-qr .info {
+    font-weight: bold;
+    color: limegreen;
+    font-size: 14px;
+    padding-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.upload-box .info:hover,
+.qr-generator-box .info:hover,
+.generated-qr .info:hover,
+.link-generated-qr .info:hover {
+    color: #55ff55;
+    text-shadow: 0 0 10px limegreen, 0 0 20px limegreen, 0 0 30px limegreen;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.flicker {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: flicker-animation 5s infinite;
+    margin-top: 40px;
+    text-align: center;
+}
+
+::file-selector-button {
+    background-color: limegreen;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    margin: 20px;
+    transition: all 0.3s ease;
+}
+
+::file-selector-button:hover {
+    background-color: #55ff55;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+@keyframes flicker-animation {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 4px limegreen, 0 0 10px limegreen;
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+
+.waveanimheader {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.waveanimheader span {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: limegreen;
+    animation: wave 5s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes wave {
+    0%, 30%, 100% {
+        transform: translateY(0);
+        text-shadow: none;
+        color: limegreen;
+    }
+    15% {
+        transform: translateY(-15px);
+        color: #55ff55;
+        text-shadow: 0 0 15px limegreen;
+    }
+}
+
+@media (max-width: 480px) {
+    .waveanimheader span {
+        font-size: 1.3rem;
+    }
+
+    .upload-box,
+    .qr-generator-box,
+    .generated-qr,
+    .link-generated-qr {
+        padding: 14px;
+    }
+
+    .submituploadbtn {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .flicker {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
