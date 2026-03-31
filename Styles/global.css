@@ -21,6 +21,7 @@
     --dark-text-color: #333;
     --light-text-color: #fff;
     --file-button-text-color: #000;
+    --placeholder-color: #aaa;
 }
 
 body {
@@ -307,7 +308,7 @@ input[type="file"] {
     .submituploadbtn {
         font-size: 14px;
         padding: 8px 14px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .flicker {
