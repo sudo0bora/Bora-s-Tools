@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube MP3 Converter</title>
+    <link rel="stylesheet" href="Styles/global.css">
+    <link rel="stylesheet" href="Styles/themes.css">
+    <link rel="stylesheet" href="Styles/youtubeconverter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="waveanimheader" onclick="location.reload()">
+            <span class="yt-y">Y</span>
+            <span class="yt-o">o</span>
+            <span class="yt-u1">u</span>
+            <span class="yt-t1">t</span>
+            <span class="yt-u2">u</span>
+            <span class="yt-b">b</span>
+            <span class="yt-e1">e</span>
+            <span class="yt-d1">-</span>
+            <span class="yt-M">M</span>
+            <span class="yt-P">P</span>
+            <span class="yt-3">3</span>
+            <span class="yt-d2">-</span>
+            <span class="yt-C">C</span>
+            <span class="yt-O">o</span>
+            <span class="yt-N">n</span>
+            <span class="yt-V">v</span>
+            <span class="yt-E2">e</span>
+            <span class="yt-R1">r</span>
+            <span class="yt-T">t</span>
+            <span class="yt-E3">e</span>
+            <span class="yt-R2">r</span>
+        </div>
+        <div class="nav">
+            <a class="hometag" href="home.html">HOME</a>
+            <a class="filesharingtag" href="filesharing.html">FILE SHARING</a>
+            <a class="qrcodegeneratortag" href="qrcodegenerator.html">QR CODE</a>
+            <a class="foldersharingtag" href="foldersharing.html">FOLDER SHARING</a>
+        </div>
+        <button class="change-themes-btn">Change Theme</button>
+        <div class="change-themes">
+            <div class="default" id="defaulttheme"></div>
+            <div class="white" id="whitetheme"></div>
+            <div class="purple" id="purpletheme"></div>
+            <div class="red" id="redtheme"></div>
+            <div class="blue" id="bluetheme"></div>
+            <div class="orange" id="orangetheme"></div>
+            <div class="pink" id="pinktheme"></div>
+            <div class="yellow" id="yellowtheme"></div>
+            <div class="black" id="blacktheme"></div>
+            <div class="cyan" id="cyantheme"></div>
+        </div> 
+    </header>
+    <main>
+        <h1 class="flicker">YouTube to MP3</h1>
+        <div class="upload-box">
+            <span class="info">Paste a YouTube link to convert</span>
+            <form id="convertForm">
+                <input type="text" id="urlInput" placeholder="https://www.youtube.com/watch?v=..." required>
+                <button type="submit" class="submituploadbtn">
+                    Convert <i class="fa-solid fa-music"></i>
+                </button>
+            </form>
+            <span class="imageinfo" id="videoTitle"></span>
+        </div>
+
+        <div class="download-box" id="downloadBox">
+            <span class="downloadindicator">
+                Conversion ready <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            <div class="progress-wrap" id="progressWrap">
+                <div class="progress-bar" id="progressBar"></div>
+                <span class="progress-text" id="progressText">0%</span>
+            </div>
+            <a href="#" id="downloadLink" class="mp3-download-link">
+                <i class="fa-solid fa-file-audio"></i> <span id="mp3filename">audio.mp3</span>
+            </a>
+            <div class="copy-download-link">
+                <button class="copy-btn" id="copyBtn">Copy Link <i class="fa-solid fa-copy"></i></button>
+            </div>
+            <div class="download-mp-btn">
+                <button class="downloadmpthreebtn" id="downloadBtn">Download MP3 <i class="fa-solid fa-download"></i></button>
+            </div>
+            <div class="delete-share">
+                <button class="delete-btn" id="resetBtn">New Conversion <i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <script src="Js/globalrestore.js"></script>
+    <script type="module" src="Js/youtubeconverter.js"></script>
+    <script src="Js/changethemes.js"></script>
+</body>
+</html>

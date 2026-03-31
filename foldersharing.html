@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder Sharing</title>
+    <link rel="stylesheet" href="Styles/global.css">
+    <link rel="stylesheet" href="Styles/themes.css">
+    <link rel="stylesheet" href="Styles/filesharing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <body>
+    <header>
+        <div class="waveanimheader" onclick="location.reload()" >
+        <span class="fd-F">F</span>
+        <span class="fd-O">O</span>
+        <span class="fd-L">L</span>
+        <span class="fd-D">D</span>
+        <span class="fd-E">E</span>
+        <span class="fd-R">R</span>
+        <span class="fd-S">S</span>
+        <span class="fd-H">H</span>
+        <span class="fd-A">A</span>
+        <span class="fd-R2">R</span>
+        <span class="fd-I">I</span>    
+        <span class="fd-N">N</span>    
+        <span class="fd-G">G</span>    
+    </div>
+    <div class="nav">
+        <a class="qrcodegeneratortag" href="home.html">HOME</a>
+        <a class="qrcodegeneratortag" href="filesharing.html">FILE SHARING</a>
+        <a class="qrcodegeneratortag" href="qrcodegenerator.html">QR CODE GENERATOR</a>
+        <a class="qrcodegeneratortag" href="youtubeconverter.html">YOUTUBE CONVERTER</a>
+    </div>
+    <button class="change-themes-btn">Change Theme</button>
+    <div class="change-themes">
+        <div class="default" id="defaulttheme"></div>
+        <div class="white" id="whitetheme"></div>
+        <div class="purple" id="purpletheme"></div>
+        <div class="red" id="redtheme"></div>
+        <div class="blue" id="bluetheme"></div>
+        <div class="orange" id="orangetheme"></div>
+        <div class="pink" id="pinktheme"></div>
+        <div class="yellow" id="yellowtheme"></div>
+        <div class="black" id="blacktheme"></div>
+        <div class="cyan" id="cyantheme"></div>
+    </div> 
+</header>
+<main>
+    <h1 class="flicker">Share Folders</h1>
+    <div class="upload-box">
+        <span class="info">Share Folders Privately</span>
+        <form>
+            <label for="folderInput" class="submituploadbtn">
+                Choose Folder <i class="fa-solid fa-folder-open"></i>
+            </label>
+            <input type="file" id="folderInput" webkitdirectory multiple>
+            <button type="submit" class="submituploadbtn">Upload <i class="fa-solid fa-upload"></i></button>
+        </form>
+        <span class="imageinfo" id="imagename"></span>
+    </div>
+    <h1 class="flicker">Download Folder</h1>
+        <div class="download-box">
+            <span class="downloadindicator">Download ready <i class="fa-solid fa-arrow-right"></i></span>
+            <a href="#">folder_name.zip</a>
+            <div class="copy-download-link">
+                <button class="copy-btn" id="copyBtn">Copy Link <i class="fa-solid fa-copy"></i></button>
+            </div>
+            <span id="timer" class="timerspan">00:00</span>
+            <div class="delete-share">
+                <button class="delete-btn">Delete Share <i class="fa-solid fa-trash"></i></button>
+            </div>
+        </div>
+</main> 
+<script type="module" src="Js/globalrestore.js"></script>
+<script type="module" src="Js/foldershare.js"></script>
+<script src="Js/changethemes.js"></script>
+</body>
+</html>
