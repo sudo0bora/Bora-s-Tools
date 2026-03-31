@@ -307,6 +307,7 @@ input[type="file"] {
     .submituploadbtn {
         font-size: 14px;
         padding: 8px 14px;
+        margin-bottom: 5px;
     }
 
     .flicker {
