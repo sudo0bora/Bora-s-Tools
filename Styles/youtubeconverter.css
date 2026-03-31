@@ -1,0 +1,137 @@
+#urlInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin: 15px 0 10px;
+    background-color: rgb(37, 158, 37);
+    color: white;
+    border: none;
+}
+
+#urlInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    outline: 2px solid rgb(14, 59, 14);
+}
+
+.download-box {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    gap: 12px;
+}
+
+.downloadindicator {
+    font-weight: bold;
+    color: limegreen;
+    font-size: 14px;
+}
+
+.mp3-download-link {
+    color: limegreen;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.mp3-download-link:hover {
+    color: #55ff55;
+    text-shadow: 0 0 10px limegreen;
+}
+
+/* Progress bar */
+.progress-wrap {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 24px;
+    position: relative;
+    display: none;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: limegreen;
+    transition: width 0.4s ease;
+    border-radius: 5px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #222;
+}
+
+.copy-download-link, .download-mp-btn {
+    display: none;
+}
+
+.copy-btn, .downloadmpthreebtn {
+    background-color: limegreen;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #55ff55;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    color: white;
+}
+.downloadmpthreebtn:hover {
+    background-color: #55ff55;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    color: white;
+}
+
+.delete-share {
+    margin-top: 5px;
+}
+
+.delete-btn {
+    background-color: limegreen;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: red;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    color: white;
+}
+
+@media (max-width: 480px) {
+    #urlInput {
+        font-size: 13px;
+    }
+}

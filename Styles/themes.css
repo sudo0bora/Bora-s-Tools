@@ -1,0 +1,373 @@
+* {
+    transition: all 0.3s ease;
+}
+:root {
+    --primary-color: limegreen;
+    --background-color: #222;
+    --background-color2: #444;
+    --card-background: #333;
+    --card-background-2: #444;
+
+    --input-text-color: #fff;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, limegreen, #55ff55, limegreen);
+
+    --border-color: limegreen;
+    --text-color: #aaa;
+    --shadow-color: rgba(0, 255, 0, 0.5);
+
+    --dark-text-color: #333;
+    --light-text-color: #fff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #55ff55;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.3);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(0, 255, 0, 0.603);
+
+    --hover-text-color: #55ff55;
+
+    --hover-border-color: lime;
+
+    --hover-background: #2c2c2c;
+}
+
+
+
+
+.red-theme {
+    --primary-color: #ff1a1a;
+    --background-color: #140000;
+    --background-color2: #1f0000;
+    --card-background: #1a0000;
+    --card-background-2: #260000;
+
+    --input-text-color: #ffd6d6;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #ff1a1a, #ff6666, #ff1a1a);
+
+    --border-color: #ff1a1a;
+    --text-color: #ffb3b3;
+    --shadow-color: rgba(255, 26, 26, 0.6);
+
+    --dark-text-color: #140000;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #ff6666;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: #ff1a1a;
+
+    --hover-shadow-color: rgba(255, 80, 80, 0.7);
+
+    --hover-text-color: #ff6666;
+
+    --hover-border-color: #ff6666;
+
+    --hover-background: #2a0000;    
+}
+
+
+.purple-theme {
+    --primary-color: #8a2be2; /* blueviolet */
+    --background-color: #140021;
+    --background-color2: #1f0033;
+    --card-background: #1a002b;
+    --card-background-2: #24003d;
+
+    --input-text-color: #e0ccff;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #8a2be2, #00eaff, #8a2be2);
+
+    --border-color: #8a2be2;
+    --text-color: #b8a6ff;
+    --shadow-color: rgba(138, 43, 226, 0.5);
+
+    --dark-text-color: #140021;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #00eaff;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.3);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(0, 234, 255, 0.6);
+
+    --hover-text-color: #00eaff;
+
+    --hover-border-color: #00eaff;
+
+    --hover-background: #2a0044;    
+}
+
+
+.cyan-theme {
+    --primary-color: #00eaff;
+    --background-color: #001417;
+    --background-color2: #001f24;
+    --card-background: #001a1e;
+    --card-background-2: #00262c;
+
+    --input-text-color: #ccfaff;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #00eaff, #66f7ff, #00eaff);
+
+    --border-color: #00eaff;
+    --text-color: #a6f7ff;
+    --shadow-color: rgba(0, 234, 255, 0.6);
+
+    --dark-text-color: #001417;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #66f7ff;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(0, 234, 255, 0.75);
+
+    --hover-text-color: #66f7ff;
+
+    --hover-border-color: #66f7ff;
+
+    --hover-background: #002a30;    
+}
+
+
+
+.blue-theme {
+    --primary-color: #1e90ff;
+    --background-color: #000814;
+    --background-color2: #001226;
+    --card-background: #000f1f;
+    --card-background-2: #001a33;
+
+    --input-text-color: #cce6ff;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #1e90ff, #66b3ff, #1e90ff);
+
+    --border-color: #1e90ff;
+    --text-color: #a6ccff;
+    --shadow-color: rgba(30, 144, 255, 0.6);
+
+    --dark-text-color: #000814;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #66b3ff;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(102, 179, 255, 0.75);
+
+    --hover-text-color: #66b3ff;
+
+    --hover-border-color: #66b3ff;
+
+    --hover-background: #001f3d;    
+}
+
+
+.yellow-theme {
+    --primary-color: #ffcc00;
+    --background-color: #141000;
+    --background-color2: #1f1800;
+    --card-background: #1a1400;
+    --card-background-2: #262000;
+
+    --input-text-color: #fff5cc;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #ffcc00, #ffe066, #ffcc00);
+
+    --border-color: #ffcc00;
+    --text-color: #ffe599;
+    --shadow-color: rgba(255, 204, 0, 0.6);
+
+    --dark-text-color: #141000;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #ffe066;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(255, 224, 102, 0.75);
+
+    --hover-text-color: #ffe066;
+
+    --hover-border-color: #ffe066;
+
+    --hover-background: #2a2200;    
+}
+
+
+
+.pink-theme {
+    --primary-color: #ff2e88;
+    --background-color: #140014;
+    --background-color2: #1f001f;
+    --card-background: #1a001a;
+    --card-background-2: #260026;
+
+    --input-text-color: #ffd6ec;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #ff2e88, #ff80bf, #ff2e88);
+
+    --border-color: #ff2e88;
+    --text-color: #ffb3d9;
+    --shadow-color: rgba(255, 46, 136, 0.6);
+
+    --dark-text-color: #140014;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #ff80bf;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(255, 128, 191, 0.75);
+
+    --hover-text-color: #ff80bf;
+
+    --hover-border-color: #ff80bf;
+
+    --hover-background: #2a002a;    
+}
+
+.orange-theme {
+    --primary-color: #ff6a00;
+    --background-color: #140a00;
+    --background-color2: #1f1100;
+    --card-background: #1a0d00;
+    --card-background-2: #261400;
+
+    --input-text-color: #ffe0cc;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #ff6a00, #ff9a4d, #ff6a00);
+
+    --border-color: #ff6a00;
+    --text-color: #ffbf99;
+    --shadow-color: rgba(255, 106, 0, 0.6);
+
+    --dark-text-color: #140a00;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #ff9a4d;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(255, 154, 77, 0.75);
+
+    --hover-text-color: #ff9a4d;
+
+    --hover-border-color: #ff9a4d;
+
+    --hover-background: #2a1800;    
+}
+
+.black-theme {
+    --primary-color: #ffffff;
+    --background-color: #000000;
+    --background-color2: #111111;
+    --card-background: #0a0a0a;
+    --card-background-2: #141414;
+
+    --input-text-color: #ffffff;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #ffffff, #888888, #ffffff);
+
+    --border-color: #ffffff;
+    --text-color: #cccccc;
+    --shadow-color: rgba(255, 255, 255, 0.25);
+
+    --dark-text-color: #000000;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #dddddd;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.4);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(255, 255, 255, 0.35);
+
+    --hover-text-color: #ffffff;
+
+    --hover-border-color: #ffffff;
+
+    --hover-background: #1a1a1a;    
+}
+
+
+.white-theme {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+    --background-color2: #eeeeee;
+    --card-background: #f5f5f5;
+    --card-background-2: #e6e6e6;
+
+    --input-text-color: #000000;
+    --input-focus-outline: 2px solid var(--primary-color);
+
+    --conic-gradient: conic-gradient(from 0deg, #000000, #777777, #000000);
+
+    --border-color: #000000;
+    --text-color: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+
+    --dark-text-color: white;
+    --light-text-color: #ffffff;
+    --file-button-text-color: #000;
+
+    /* hovers */
+    --primary-hover-color: #444444;
+
+    --delete-hover-shadow-color: rgba(255, 0, 0, 0.3);
+
+    --delete-hover-color: red;
+
+    --hover-shadow-color: rgba(0, 0, 0, 0.3);
+
+    --hover-text-color: #000000;
+
+    --hover-border-color: #000000;
+
+    --hover-background: #dddddd;    
+}
