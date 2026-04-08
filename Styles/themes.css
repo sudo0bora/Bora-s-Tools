@@ -7,6 +7,7 @@
     --background-color2: #444;
     --card-background: #333;
     --card-background-2: #444;
+    --delete-button-background: red;
 
     --input-text-color: #fff;
     --input-focus-outline: 2px solid var(--primary-color);
