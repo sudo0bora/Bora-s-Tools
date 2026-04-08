@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Converter</title>
+    <link rel="stylesheet" href="Styles/global.css">
+    <link rel="stylesheet" href="Styles/themes.css">
+    <link rel="stylesheet" href="Styles/imageconverter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="waveanimheader" onclick="location.reload()">
+            <span class="ic-i">I</span>
+            <span class="ic-m">M</span>
+            <span class="ic-a">A</span>
+            <span class="ic-g">G</span>
+            <span class="ic-e">E</span>
+            <span class="ic-space">-</span>
+            <span class="ic-c">C</span>
+            <span class="ic-o">O</span>
+            <span class="ic-n">N</span>
+            <span class="ic-v">V</span>
+            <span class="ic-e2">E</span>
+            <span class="ic-r">R</span>
+            <span class="ic-t">T</span>
+            <span class="ic-e3">E</span>
+            <span class="ic-r2">R</span>
+        </div>
+        <div class="nav">
+            <a class="qrcodegeneratortag" href="index.html">Home</a>
+            <a class="qrcodegeneratortag" href="filesharing.html">File Sharing</a>
+            <a class="qrcodegeneratortag" href="foldersharing.html">Folder Sharing</a>
+            <a class="qrcodegeneratortag" href="qrcodegenerator.html">QR Code Generator</a>
+            <a class="qrcodegeneratortag" href="youtubeconverter.html">YouTube Converter</a>
+            <a class="qrcodegeneratortag active" href="imageconverter.html">Image Converter</a>
+            <a class="qrcodegeneratortag" href="videotoaudio.html">Video To Audio</a>
+        </div>
+        <button class="change-themes-btn">Change Theme</button>
+        <div class="change-themes">
+            <div class="default" id="defaulttheme"></div>
+            <div class="white" id="whitetheme"></div>
+            <div class="purple" id="purpletheme"></div>
+            <div class="red" id="redtheme"></div>
+            <div class="blue" id="bluetheme"></div>
+            <div class="orange" id="orangetheme"></div>
+            <div class="pink" id="pinktheme"></div>
+            <div class="yellow" id="yellowtheme"></div>
+            <div class="black" id="blacktheme"></div>
+            <div class="cyan" id="cyantheme"></div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="flicker">Image Converter</h1>
+
+        <div class="upload-box">
+            <span class="info">Convert Images To Different Formats</span>
+
+            <form>
+                <label for="imageInput" class="submituploadbtn">
+                    Choose Image <i class="fa-solid fa-image"></i>
+                </label>
+                <input type="file" id="imageInput" name="file" accept="image/*">
+
+                <select name="image formats" id="imageFormats">
+                    <option value="jpg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WEBP</option>
+                </select>
+
+                <button type="submit" class="submituploadbtn">
+                    Convert <i class="fa-solid fa-upload"></i>
+                </button>
+            </form>
+
+            <span class="imageinfo" id="imagename"></span>
+        </div>
+
+        <h1 class="flicker">Download Image</h1>
+
+        <div class="download-box">
+            <span class="downloadindicator">
+                Download ready <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+            <a href="#" id="downloadImageLink">converted_image.jpg</a>
+
+            <button class="downloadbutton" id="downloadconvertedimagebtn">
+                Download Image <i class="fa-solid fa-download"></i>
+            </button>
+                <span id="timer" class="timerspan">00:00</span>
+            <div class="copy-download-link">
+                <button class="copy-btn">
+                    Copy Link <i class="fa-solid fa-copy"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+      <footer>
+         <p>&copy; 2026 Bora's Tools. All rights reserved.</p>
+         <div class="quick-links">
+            <a class="quicklinktag" href="index.html">Home</a>
+            <a class="quicklinktag" href="filesharing.html">File Sharing</a>
+            <a class="quicklinktag" href="foldersharing.html">Folder Sharing</a>
+            <a class="quicklinktag" href="qrcodegenerator.html">QR Code Generator</a>
+            <a class="quicklinktag" href="youtubeconverter.html">YouTube Converter</a>
+            <a class="quicklinktag active" href="imageconverter.html">Image Converter</a>
+            <a class="quicklinktag" href="videotoaudio.html">Video To Audio</a>
+         </div>
+      </footer>
+    <script src="Js/globalrestore.js"></script>
+    <script src="Js/imageconverter.js"></script>
+    <script src="Js/changethemes.js"></script>
+</body>
+</html>

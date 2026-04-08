@@ -30,12 +30,15 @@
             <span class="o2">O</span>
             <span class="r3">R</span>
         </div>
-    <div class="nav">
-        <a class="hometag" href="index.html">HOME</a>
-        <a class="filesharingtag" href="filesharing.html">FILE SHARING</a>
-        <a class="qrcodegeneratortag" href="foldersharing.html">FOLDER SHARING</a>
-        <a class="qrcodegeneratortag" href="youtubeconverter.html">YOUTUBE CONVERTER</a>
-    </div>
+        <div class="nav">
+            <a class="qrcodegeneratortag" href="index.html">Home</a>
+            <a class="qrcodegeneratortag" href="filesharing.html">File Sharing</a>
+            <a class="qrcodegeneratortag" href="foldersharing.html">Folder Sharing</a>
+            <a class="qrcodegeneratortag active" href="qrcodegenerator.html">QR Code Generator</a>
+            <a class="qrcodegeneratortag" href="youtubeconverter.html">YouTube Converter</a>
+            <a class="qrcodegeneratortag" href="imageconverter.html">Image Converter</a>
+            <a class="qrcodegeneratortag" href="videotoaudio.html">Video To Audio</a>
+        </div>
     <button class="change-themes-btn">Change Theme</button>
         <div class="change-themes">
          <div class="default" id="defaulttheme"></div>
@@ -84,11 +87,22 @@
         <div class="link-generated-qr">
             <h1 class="flicker">Generated QR Code</h1>
             <div id="LinkqrCodeContainer"></div>
-            <button class="submituploadbtn" id="downloadqrlinkbtn">Download QR Code <i class="fa-solid fa-download"></i></button>
+            <button class="downloadbutton" id="downloadqrlinkbtn">Download QR Code <i class="fa-solid fa-download"></i></button>
             <button class="delete-btn">Delete Share <i class="fa-solid fa-trash"></i></button>
-        </div>
-            
+        </div>  
     </main>
+      <footer>
+         <p>&copy; 2026 Bora's Tools. All rights reserved.</p>
+         <div class="quick-links">
+            <a class="quicklinktag" href="index.html">Home</a>
+            <a class="quicklinktag" href="filesharing.html">File Sharing</a>
+            <a class="quicklinktag" href="foldersharing.html">Folder Sharing</a>
+            <a class="quicklinktag active" href="qrcodegenerator.html">QR Code Generator</a>
+            <a class="quicklinktag" href="youtubeconverter.html">YouTube Converter</a>
+            <a class="quicklinktag" href="imageconverter.html">Image Converter</a>
+            <a class="quicklinktag" href="videotoaudio.html">Video To Audio</a>
+         </div>
+      </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script type="module" src="Js/globalrestore.js"></script>
     <script type="module" src="Js/generateqr.js"></script>
