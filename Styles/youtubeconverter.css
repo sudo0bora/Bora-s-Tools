@@ -129,9 +129,3 @@ input:focus {
     box-shadow: 0 5px 15px var(--delete-hover-shadow-color);
     color: var(--light-text-color);
 }
-
-@media (max-width: 480px) {
-    #urlInput {
-        font-size: 13px;
-    }
-}

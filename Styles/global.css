@@ -31,6 +31,9 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -249,6 +252,24 @@ option:checked {
 }
 
 
+#urlInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin: 15px 0 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+}
+
+#urlInput::placeholder {
+    color: var(--placeholder-color);
+}
+
+input:focus {
+    outline: 2px solid var(--input-focus-outline);
+}
 
 
 
@@ -427,6 +448,7 @@ footer {
     text-align: center;
     margin-top: 40px;
     border-top: 1px solid var(--border-color);
+    margin-top: auto;
     .quick-links {
         display: flex;
         justify-content: center;
@@ -492,9 +514,54 @@ input[type="file"] {
     }
 }
 
+
+
+
+@media screen and (max-width: 768px) {
+    .waveanimheader span {
+        font-size: 1.5rem;
+    }
+
+    main {
+        height: auto;
+        padding: 30px 15px;
+    }
+    .submituploadbtn:nth-child(3) {
+        font-size: 16px;
+    }
+
+    .upload-box, .download-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .download-box {
+        flex-direction: column;
+    }
+
+    .flicker {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .copy-btn, .delete-btn, .submituploadbtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    ::file-selector-button {
+        padding: 8px 14px;
+        margin: 12px;
+    }
+    
+}
+
 @media (max-width: 480px) {
     .waveanimheader span {
         font-size: 1.3rem;
+    }
+        #urlInput {
+        font-size: 13px;
     }
 
     .upload-box,
@@ -521,6 +588,94 @@ input[type="file"] {
         }
     }
 }
+
+
+@media screen and (max-width: 425px) {
+    .waveanimheader span {
+        font-size: 1.4rem;
+    }
+    .submituploadbtn:nth-child(3) {
+        font-size: 16px;
+    }
+
+    main {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .upload-box, .download-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .download-box {
+        flex-direction: column;
+    }
+
+    .flicker {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .copy-btn, .delete-btn, .submituploadbtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    ::file-selector-button {
+        padding: 8px 14px;
+        margin: 12px;
+    }
+    footer {
+        .quick-links {
+            gap: 10px;
+            .quicklinktag {
+                font-size: 8px;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 375px) {
+    .waveanimheader span {
+        font-size: 1.1rem;
+    }
+    .submituploadbtn:nth-child(3) {
+        font-size: 16px;
+    }
+
+    main {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .upload-box, .download-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .download-box {
+        flex-direction: column;
+    }
+
+    .flicker {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .copy-btn, .delete-btn, .submituploadbtn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    ::file-selector-button {
+        padding: 8px 14px;
+        margin: 12px;
+    }
+}
+
 
 
 /* Wave delays */
@@ -610,13 +765,44 @@ input[type="file"] {
 
 
 /* Video To Audio */
-.waveanimheader .va-m    { animation-delay: 0.0s; }
-.waveanimheader .va-p    { animation-delay: 0.1s; }
-.waveanimheader .va-mp3  { animation-delay: 0.2s; }
-.waveanimheader .va-space { animation-delay: 0.3s; }
-.waveanimheader .va-to   { animation-delay: 0.4s; }
-.waveanimheader .va-space2 { animation-delay: 0.5s; }
-.waveanimheader .va-m2   { animation-delay: 0.6s; }
-.waveanimheader .va-p2   { animation-delay: 0.7s; }
-.waveanimheader .va-mp4  { animation-delay: 0.8s; }
+.waveanimheader .va-v    { animation-delay: 0.0s; }
+.waveanimheader .va-i    { animation-delay: 0.1s; }
+.waveanimheader .va-d    { animation-delay: 0.2s; }
+.waveanimheader .va-e    { animation-delay: 0.3s; }
+.waveanimheader .va-o    { animation-delay: 0.4s; }
+.waveanimheader .va-space1 { animation-delay: 0.5s; }
+.waveanimheader .va-t    { animation-delay: 0.6s; }
+.waveanimheader .va-o2   { animation-delay: 0.7s; } 
+.waveanimheader .va-space2   { animation-delay: 0.8s; }
+.waveanimheader .va-a  { animation-delay: 0.9s; }
+.waveanimheader .va-u  { animation-delay: 1.0s; }
+.waveanimheader .va-d2 { animation-delay: 1.1s; }
+.waveanimheader .va-i2 { animation-delay: 1.2s; }
+.waveanimheader .va-o3 { animation-delay: 1.3s; }
 
+
+/* Spotify Music Downloader */
+.waveanimheader .spotify-s       { animation-delay: 0.0s; }
+.waveanimheader .spotify-p       { animation-delay: 0.1s; }
+.waveanimheader .spotify-o       { animation-delay: 0.2s; }
+.waveanimheader .spotify-t       { animation-delay: 0.3s; }
+.waveanimheader .spotify-i       { animation-delay: 0.4s; }
+.waveanimheader .spotify-f       { animation-delay: 0.5s; }
+.waveanimheader .spotify-y       { animation-delay: 0.6s; }
+.waveanimheader .spotify-space1  { animation-delay: 0.7s; }
+.waveanimheader .spotify-m       { animation-delay: 0.8s; }
+.waveanimheader .spotify-u       { animation-delay: 0.9s; }
+.waveanimheader .spotify-s2      { animation-delay: 1.0s; }
+.waveanimheader .spotify-i2      { animation-delay: 1.1s; }
+.waveanimheader .spotify-c       { animation-delay: 1.2s; }
+.waveanimheader .spotify-space2  { animation-delay: 1.3s; }
+.waveanimheader .spotify-d       { animation-delay: 1.4s; }
+.waveanimheader .spotify-o2      { animation-delay: 1.5s; }
+.waveanimheader .spotify-w       { animation-delay: 1.6s; }
+.waveanimheader .spotify-n       { animation-delay: 1.7s; }
+.waveanimheader .spotify-l       { animation-delay: 1.8s; }
+.waveanimheader .spotify-o3      { animation-delay: 1.9s; }
+.waveanimheader .spotify-a       { animation-delay: 2.0s; }
+.waveanimheader .spotify-d2      { animation-delay: 2.1s; }
+.waveanimheader .spotify-e       { animation-delay: 2.2s; }
+.waveanimheader .spotify-r       { animation-delay: 2.3s; }
