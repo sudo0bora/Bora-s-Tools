@@ -158,7 +158,6 @@ option:checked {
 }
 
 
-
 .download-box {
     display: none;
     align-items: center;
@@ -252,7 +251,40 @@ option:checked {
 }
 
 
-#urlInput {
+.copy-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--background-color2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 12px var(--shadow-color);
+}
+#mbinput {
+    width: 17%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin: 15px 0 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#urlInput, #shortenedUrl {
     width: 100%;
     padding: 10px;
     font-size: 15px;
@@ -806,3 +838,39 @@ input[type="file"] {
 .waveanimheader .spotify-d2      { animation-delay: 2.1s; }
 .waveanimheader .spotify-e       { animation-delay: 2.2s; }
 .waveanimheader .spotify-r       { animation-delay: 2.3s; }
+
+
+/* Url Shortener */
+.waveanimheader .url-u   { animation-delay: 0.0s; }
+.waveanimheader .url-r   { animation-delay: 0.1s; }
+.waveanimheader .url-l   { animation-delay: 0.2s; }
+.waveanimheader .url-space { animation-delay: 0.3s; }
+.waveanimheader .url-s   { animation-delay: 0.4s; }
+.waveanimheader .url-h   { animation-delay: 0.5s; }
+.waveanimheader .url-o   { animation-delay: 0.6s; }
+.waveanimheader .url-r2  { animation-delay: 0.7s; }
+.waveanimheader .url-t   { animation-delay: 0.8s; }
+.waveanimheader .url-e   { animation-delay: 0.9s; }
+.waveanimheader .url-n   { animation-delay: 1.0s; }
+.waveanimheader .url-e2  { animation-delay: 1.1s; }
+.waveanimheader .url-r3  { animation-delay: 1.2s; }
+
+
+/* Image Compressor */
+.waveanimheader .ic2-i   { animation-delay: 0.0s; }
+.waveanimheader .ic2-m   { animation-delay: 0.1s; }
+.waveanimheader .ic2-a   { animation-delay: 0.2s; }
+.waveanimheader .ic2-g   { animation-delay: 0.3s; }
+.waveanimheader .ic2-e   { animation-delay: 0.4s; }
+.waveanimheader .ic2-space { animation-delay: 0.5s; }
+.waveanimheader .ic2-c   { animation-delay: 0.6s; }
+.waveanimheader .ic2-o   { animation-delay: 0.7s; }
+.waveanimheader .ic2-m2  { animation-delay: 0.8s; }
+.waveanimheader .ic2-p   { animation-delay: 0.9s; }
+.waveanimheader .ic2-r   { animation-delay: 1.0s; }
+.waveanimheader .ic2-e2  { animation-delay: 1.1s; }
+.waveanimheader .ic2-s   { animation-delay: 1.2s; }
+.waveanimheader .ic2-s2  { animation-delay: 1.3s; }
+.waveanimheader .ic2-o2  { animation-delay: 1.4s; }
+.waveanimheader .ic2-r2  { animation-delay: 1.5s; }
+

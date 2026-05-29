@@ -17,19 +17,6 @@ input:focus {
     outline: 2px solid var(--input-focus-outline);
 }
 
-.download-box {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--card-background-2);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 500px;
-    gap: 12px;
-}
 
 .downloadindicator {
     font-weight: bold;
@@ -93,20 +80,20 @@ input:focus {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    .copy-btn:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px var(--hover-shadow-color);
+        color: var(--light-text-color);
+    }
+    .downloadmpthreebtn:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px var(--hover-shadow-color);
+        color: var(--light-text-color);
+    }
 }
 
-.copy-btn:hover {
-    background-color: var(--primary-hover-color);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px var(--hover-shadow-color);
-    color: var(--light-text-color);
-}
-.downloadmpthreebtn:hover {
-    background-color: var(--primary-hover-color);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px var(--hover-shadow-color);
-    color: var(--light-text-color);
-}
 
 .delete-share {
     margin-top: 5px;
@@ -121,11 +108,11 @@ input:focus {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    &:hover {
+        background-color: var(--delete-hover-color);
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px var(--delete-hover-shadow-color);
+        color: var(--light-text-color);
+    }
 }
 
-.delete-btn:hover {
-    background-color: var(--delete-hover-color);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px var(--delete-hover-shadow-color);
-    color: var(--light-text-color);
-}
