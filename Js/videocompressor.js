@@ -42,9 +42,11 @@
         "Compressing... " + Math.min(100, Math.round(progress * 100)) + "%";
     });
 
-    // All three files come from the same core package and get converted
-    // to same-origin blob URLs, which is required for the Worker to load
-    // without a cross-origin error on GitHub Pages.
+    // Single-thread @ffmpeg/core does NOT publish a ffmpeg-core.worker.js file,
+    // so we only blob-ify coreURL and wasmURL. The FFmpeg class's own internal
+    // worker is handled separately via classWorkerURL, pointed at a local copy
+    // of worker.js (downloaded once into Js/ffmpeg/worker.js) so the Worker is
+    // constructed same-origin instead of from unpkg.com.
     const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm";
 
     await ffmpeg.load({
@@ -53,10 +55,7 @@
         `${baseURL}/ffmpeg-core.wasm`,
         "application/wasm",
       ),
-      workerURL: await toBlobURL(
-        `${baseURL}/ffmpeg-core.worker.js`,
-        "text/javascript",
-      ),
+      classWorkerURL: "Js/ffmpeg/worker.js",
     });
 
     ffmpegLoaded = true;
