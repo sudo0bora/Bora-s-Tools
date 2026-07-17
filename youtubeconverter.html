@@ -9,56 +9,63 @@
     <link rel="stylesheet" href="Styles/youtubeconverter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <header>
-        <div class="waveanimheader" onclick="location.reload()">
-            <span class="yt-y">Y</span>
-            <span class="yt-o">o</span>
-            <span class="yt-u1">u</span>
-            <span class="yt-t1">t</span>
-            <span class="yt-u2">u</span>
-            <span class="yt-b">b</span>
-            <span class="yt-e1">e</span>
-            <span class="yt-d1">-</span>
-            <span class="yt-M">M</span>
-            <span class="yt-P">P</span>
-            <span class="yt-3">3</span>
-            <span class="yt-d2">-</span>
-            <span class="yt-C">C</span>
-            <span class="yt-O">o</span>
-            <span class="yt-N">n</span>
-            <span class="yt-V">v</span>
-            <span class="yt-E2">e</span>
-            <span class="yt-R1">r</span>
-            <span class="yt-T">t</span>
-            <span class="yt-E3">e</span>
-            <span class="yt-R2">r</span>
+<body data-tool="youtubeconverter">
+        <header>
+      <div class="header-actions-corner">
+        <button class="change-themes-btn">
+          <i class="fa-solid fa-palette"></i> Theme
+        </button>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" id="toolsBtn">
+            All Tools <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="nav-dropdown-menu" id="toolsMenu">
+            <!-- filled automatically by nav.js -->
+          </div>
         </div>
-        <div class="nav">
-            <a class="qrcodegeneratortag" href="index.html">Home</a>
-            <a class="qrcodegeneratortag" href="filesharing.html">File Sharing</a>
-            <a class="qrcodegeneratortag" href="foldersharing.html">Folder Sharing</a>
-            <a class="qrcodegeneratortag" href="qrcodegenerator.html">QR Code Generator</a>
-            <a class="qrcodegeneratortag active" href="youtubeconverter.html">YouTube Converter</a>
-            <a class="qrcodegeneratortag" href="imageconverter.html">Image Converter</a>
-            <a class="qrcodegeneratortag" href="videotoaudio.html">Video To Audio</a>
-            <a class="qrcodegeneratortag" href="spotifymusicdownloader.html">Spotify Music Downloader</a>
-            <a class="qrcodegeneratortag" href="urlshortener.html">Url Shortener</a>
-            <a class="qrcodegeneratortag" href="imagecompressor.html">Image Compressor</a>
-        </div>
-        <button class="change-themes-btn">Change Theme</button>
-        <div class="change-themes">
-            <div class="default" id="defaulttheme"></div>
-            <div class="white" id="whitetheme"></div>
-            <div class="purple" id="purpletheme"></div>
-            <div class="red" id="redtheme"></div>
-            <div class="blue" id="bluetheme"></div>
-            <div class="orange" id="orangetheme"></div>
-            <div class="pink" id="pinktheme"></div>
-            <div class="yellow" id="yellowtheme"></div>
-            <div class="black" id="blacktheme"></div>
-            <div class="cyan" id="cyantheme"></div>
-        </div> 
+      </div>
+
+    <div class="waveanimheader" onclick="location.reload()">
+        <span class="yt-y">Y</span>
+        <span class="yt-o">o</span>
+        <span class="yt-u1">u</span>
+        <span class="yt-t1">t</span>
+        <span class="yt-u2">u</span>
+        <span class="yt-b">b</span>
+        <span class="yt-e1">e</span>
+        <span class="yt-d1">-</span>
+        <span class="yt-M">M</span>
+        <span class="yt-P">P</span>
+        <span class="yt-3">3</span>
+        <span class="yt-d2">-</span>
+        <span class="yt-C">C</span>
+        <span class="yt-O">o</span>
+        <span class="yt-N">n</span>
+        <span class="yt-V">v</span>
+        <span class="yt-E2">e</span>
+        <span class="yt-R1">r</span>
+        <span class="yt-T">t</span>
+        <span class="yt-E3">e</span>
+        <span class="yt-R2">r</span>
+    </div>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="navlink" data-tool-link="home">Home</a>
+        <!-- recently used tools injected here by nav.js -->
+      </nav>
+
+      <div class="change-themes" id="themesPanel">
+        <div class="default" id="defaulttheme"></div>
+        <div class="white" id="whitetheme"></div>
+        <div class="purple" id="purpletheme"></div>
+        <div class="red" id="redtheme"></div>
+        <div class="blue" id="bluetheme"></div>
+        <div class="orange" id="orangetheme"></div>
+        <div class="pink" id="pinktheme"></div>
+        <div class="yellow" id="yellowtheme"></div>
+        <div class="black" id="blacktheme"></div>
+        <div class="cyan" id="cyantheme"></div>
+      </div>
     </header>
     <main>
         <h1 class="flicker">YouTube to MP3</h1>
@@ -113,5 +120,6 @@
     <script src="Js/globalrestore.js"></script>
     <script type="module" src="Js/youtubeconverter.js"></script>
     <script src="Js/changethemes.js"></script>
+    <script src="Js/nav.js"></script>
 </body>
 </html>

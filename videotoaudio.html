@@ -8,48 +8,54 @@
     <link rel="stylesheet" href="Styles/themes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body data-tool="videotoaudio">
     <header>
-        <div class="waveanimheader" onclick="location.reload()">
-            <span class="va-v">V</span>
-            <span class="va-i">I</span>
-            <span class="va-d">D</span>
-            <span class="va-e">E</span>
-            <span class="va-o">O</span>
-            <span class="va-space1">-</span>
-            <span class="va-t">T</span>
-            <span class="va-o2">O</span>
-            <span class="va-space2">-</span>
-            <span class="va-a">A</span>
-            <span class="va-u">U</span>
-            <span class="va-d2">D</span>
-            <span class="va-i2">I</span>
-            <span class="va-o3">O</span>
+      <div class="header-actions-corner">
+        <button class="change-themes-btn">
+          <i class="fa-solid fa-palette"></i> Theme
+        </button>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" id="toolsBtn">
+            All Tools <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="nav-dropdown-menu" id="toolsMenu">
+            <!-- filled automatically by nav.js -->
+          </div>
         </div>
-        <div class="nav">
-            <a class="qrcodegeneratortag" href="index.html">Home</a>
-            <a class="qrcodegeneratortag" href="filesharing.html">File Sharing</a>
-            <a class="qrcodegeneratortag" href="foldersharing.html">Folder Sharing</a>
-            <a class="qrcodegeneratortag" href="qrcodegenerator.html">QR Code Generator</a>
-            <a class="qrcodegeneratortag" href="youtubeconverter.html">YouTube Converter</a>
-            <a class="qrcodegeneratortag" href="imageconverter.html">Image Converter</a>
-            <a class="qrcodegeneratortag active" href="videotoaudio.html">Video To Audio</a>
-            <a class="qrcodegeneratortag" href="spotifymusicdownloader.html">Spotify Music Downloader</a>
-            <a class="qrcodegeneratortag" href="imagecompressor.html">Image Compressor</a>
-        </div>
-        <button class="change-themes-btn">Change Theme</button>
-        <div class="change-themes">
-            <div class="default" id="defaulttheme"></div>
-            <div class="white" id="whitetheme"></div>
-            <div class="purple" id="purpletheme"></div>
-            <div class="red" id="redtheme"></div>
-            <div class="blue" id="bluetheme"></div>
-            <div class="orange" id="orangetheme"></div>
-            <div class="pink" id="pinktheme"></div>
-            <div class="yellow" id="yellowtheme"></div>
-            <div class="black" id="blacktheme"></div>
-            <div class="cyan" id="cyantheme"></div>
-        </div>
+      </div>
+    <div class="waveanimheader" onclick="location.reload()">
+        <span class="va-v">V</span>
+        <span class="va-i">I</span>
+        <span class="va-d">D</span>
+        <span class="va-e">E</span>
+        <span class="va-o">O</span>
+        <span class="va-space1">-</span>
+        <span class="va-t">T</span>
+        <span class="va-o2">O</span>
+        <span class="va-space2">-</span>
+        <span class="va-a">A</span>
+        <span class="va-u">U</span>
+        <span class="va-d2">D</span>
+        <span class="va-i2">I</span>
+        <span class="va-o3">O</span>
+    </div>
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="navlink" data-tool-link="home">Home</a>
+        <!-- recently used tools injected here by nav.js -->
+      </nav>
+
+      <div class="change-themes" id="themesPanel">
+        <div class="default" id="defaulttheme"></div>
+        <div class="white" id="whitetheme"></div>
+        <div class="purple" id="purpletheme"></div>
+        <div class="red" id="redtheme"></div>
+        <div class="blue" id="bluetheme"></div>
+        <div class="orange" id="orangetheme"></div>
+        <div class="pink" id="pinktheme"></div>
+        <div class="yellow" id="yellowtheme"></div>
+        <div class="black" id="blacktheme"></div>
+        <div class="cyan" id="cyantheme"></div>
+      </div>
     </header>
     <main>
         <h1 class="flicker">Video To Audio Converter</h1>
@@ -104,5 +110,6 @@
     <script src="Js/changethemes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
     <script src="Js/videotoaudio.js"></script>
+    <script src="Js/nav.js"></script>
 </body>
 </html>

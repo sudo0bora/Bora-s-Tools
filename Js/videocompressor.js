@@ -16,29 +16,48 @@
   videoInput.addEventListener("change", () => {
     const file = videoInput.files[0];
     if (file) {
-      videoName.textContent = "Selected: " + file.name + " (" + (file.size / 1024 / 1024).toFixed(2) + " MB)";
+      videoName.textContent =
+        "Selected: " +
+        file.name +
+        " (" +
+        (file.size / 1024 / 1024).toFixed(2) +
+        " MB)";
     }
   });
 
   async function loadFFmpeg() {
     videoName.textContent = "Loading FFmpeg...";
 
-    const { FFmpeg } = await import("https://unpkg.com/@ffmpeg/ffmpeg@0.12.6/dist/esm/index.js");
-    const util = await import("https://unpkg.com/@ffmpeg/util@0.12.1/dist/esm/index.js");
+    const { FFmpeg } =
+      await import("https://unpkg.com/@ffmpeg/ffmpeg@0.12.6/dist/esm/index.js");
+    const util =
+      await import("https://unpkg.com/@ffmpeg/util@0.12.1/dist/esm/index.js");
     fetchFile = util.fetchFile;
+    const toBlobURL = util.toBlobURL;
 
     ffmpeg = new FFmpeg();
 
     ffmpeg.on("progress", ({ progress }) => {
-      videoName.textContent = "Compressing... " + Math.min(100, Math.round(progress * 100)) + "%";
+      videoName.textContent =
+        "Compressing... " + Math.min(100, Math.round(progress * 100)) + "%";
     });
 
-    // Local files — must be downloaded into Js/ffmpeg/ first
-await ffmpeg.load({
-  coreURL:   "Js/ffmpeg/ffmpeg-core.js",
-  wasmURL:   "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm/ffmpeg-core.wasm",
-  workerURL: "Js/ffmpeg/worker.js",
-});
+    // All three files come from the same core package and get converted
+    // to same-origin blob URLs, which is required for the Worker to load
+    // without a cross-origin error on GitHub Pages.
+    const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.6/dist/esm";
+
+    await ffmpeg.load({
+      coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
+      wasmURL: await toBlobURL(
+        `${baseURL}/ffmpeg-core.wasm`,
+        "application/wasm",
+      ),
+      workerURL: await toBlobURL(
+        `${baseURL}/ffmpeg-core.worker.js`,
+        "text/javascript",
+      ),
+    });
 
     ffmpegLoaded = true;
   }
@@ -83,7 +102,10 @@ await ffmpeg.load({
         const duration = await getVideoDuration(file);
         if (duration > 0) {
           const targetBits = targetMB * 1024 * 1024 * 8;
-          const videoBitrate = Math.max(100000, Math.floor(targetBits / duration) - 128000);
+          const videoBitrate = Math.max(
+            100000,
+            Math.floor(targetBits / duration) - 128000,
+          );
           args.push("-b:v", String(videoBitrate), "-b:a", "128k");
         } else {
           args.push("-crf", "28");
@@ -92,7 +114,17 @@ await ffmpeg.load({
         args.push("-crf", "28");
       }
 
-      args.push("-c:v", "libx264", "-c:a", "aac", "-preset", "fast", "-movflags", "+faststart", outputName);
+      args.push(
+        "-c:v",
+        "libx264",
+        "-c:a",
+        "aac",
+        "-preset",
+        "fast",
+        "-movflags",
+        "+faststart",
+        outputName,
+      );
 
       await ffmpeg.exec(args);
 
@@ -110,11 +142,11 @@ await ffmpeg.load({
 
       const finalMB = (blob.size / 1024 / 1024).toFixed(2);
       const origMB = (file.size / 1024 / 1024).toFixed(2);
-      videoName.textContent = "Done! " + finalName + " — " + finalMB + " MB (was " + origMB + " MB)";
+      videoName.textContent =
+        "Done! " + finalName + " — " + finalMB + " MB (was " + origMB + " MB)";
 
       downloadBox.style.display = "flex";
       downloadBox.scrollIntoView({ behavior: "smooth" });
-
     } catch (err) {
       console.error(err);
       videoName.textContent = "Error: " + err.message;

@@ -1,130 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Tools</title>
-      <link rel="stylesheet" href="Styles/global.css">
-      <link rel="stylesheet" href="Styles/themes.css">
-      <link rel="stylesheet" href="Styles/home.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   </head>
-   <body>
-      <header>
-         <div class="waveanimheader" onclick="location.reload()">
-            <span class="h-B">B</span>
-            <span class="h-O1">O</span>
-            <span class="h-R">R</span>
-            <span class="h-A">A</span>
-            <span class="h-S">'S</span>
-            <span class="h-space">-</span>
-            <span class="h-T">T</span>
-            <span class="h-O2">O</span>
-            <span class="h-O3">O</span>
-            <span class="h-L">L</span>
-            <span class="h-S2">S</span>
-         </div>
-        <div class="nav">
-            <a class="qrcodegeneratortag active" href="index.html">Home</a>
-            <a class="qrcodegeneratortag" href="filesharing.html">File Sharing</a>
-            <a class="qrcodegeneratortag" href="foldersharing.html">Folder Sharing</a>
-            <a class="qrcodegeneratortag" href="qrcodegenerator.html">QR Code Generator</a>
-            <a class="qrcodegeneratortag" href="youtubeconverter.html">YouTube Converter</a>
-            <a class="qrcodegeneratortag" href="imageconverter.html">Image Converter</a>
-            <a class="qrcodegeneratortag" href="videotoaudio.html">Video To Audio</a>
-            <a class="qrcodegeneratortag" href="spotifymusicdownloader.html">Spotify Music Downloader</a>
-            <a class="qrcodegeneratortag" href="urlshortener.html">Url Shortener</a>
-            <a class="qrcodegeneratortag" href="imagecompressor.html">Image Compressor</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools</title>
+    <link rel="stylesheet" href="Styles/global.css" />
+    <link rel="stylesheet" href="Styles/themes.css" />
+    <link rel="stylesheet" href="Styles/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body data-tool="home">
+    <header>
+      <div class="header-actions-corner">
+        <button class="change-themes-btn">
+          <i class="fa-solid fa-palette"></i> Theme
+        </button>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" id="toolsBtn">
+            All Tools <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="nav-dropdown-menu" id="toolsMenu">
+            <!-- filled automatically by nav.js -->
+          </div>
         </div>
-         <button class="change-themes-btn">Change Theme</button>
-         <div class="change-themes">
-            <div class="default" id="defaulttheme"></div>
-            <div class="white" id="whitetheme"></div>
-            <div class="purple" id="purpletheme"></div>
-            <div class="red" id="redtheme"></div>
-            <div class="blue" id="bluetheme"></div>
-            <div class="orange" id="orangetheme"></div>
-            <div class="pink" id="pinktheme"></div>
-            <div class="yellow" id="yellowtheme"></div>
-            <div class="black" id="blacktheme"></div>
-            <div class="cyan" id="cyantheme"></div>
-      </div> 
-      </header>
-      <div class="home-container">
-         <span class="tools-below-title">All Of The Tools Below Are Made By Bora</span>
-         <div class="tool-cards-container">
-         <div class="tool-card" onclick="location.href='filesharing.html'">
-            <h2>File Sharing</h2>
-            <i class="fa-solid fa-file"></i>
-            <p>Share Your Files Privately</p>
-         </div>
-         <div class="tool-card" onclick="location.href='foldersharing.html'">
-            <h2>Folder Sharing</h2>
-            <i class="fa-solid fa-folder"></i>
-            <p>Share Your Folders Privately</p>
-         </div>
-         <div class="tool-card" onclick="location.href='qrcodegenerator.html'">
-            <h2>QR Code Generator</h2>
-            <i class="fa-solid fa-qrcode"></i>
-            <p>Generate QR Codes For Your Links</p>
-         </div>
-         <div class="tool-card" onclick="location.href='youtubeconverter.html'">
-            <h2>Youtube Mp3 Converter</h2>
-            <i class="fa-solid fa-music"></i>
-            <p>Convert Youtube Videos To Mp3 Format</p>
-         </div>
-         <div class="tool-card" onclick="location.href='imageconverter.html'">
-            <h2>Image Converter</h2>
-            <i class="fa-solid fa-image"></i>
-            <p>Convert Images To Different Formats</p>
-         </div>
-         <div class="tool-card" onclick="location.href='videotoaudio.html'">
-            <h2>Video To Audio</h2>
-            <i class="fa-solid fa-film"></i>
-            <p>Convert Videos To Mp3 Format</p>
-         </div>
-         <div class="tool-card" onclick="location.href='spotifymusicdownloader.html'">
-            <h2>Spotify Music Downloader</h2>
-            <i class="fa-solid fa-music"></i>
-            <p>Download Music From Spotify</p>
-         </div>
-         <div class="tool-card" onclick="location.href='urlshortener.html'">
-            <h2>Url Shortener</h2>
-            <i class="fa-solid fa-link"></i>
-            <p>Shorten Your Long Links</p>
-         </div>
-         <div class="tool-card" onclick="location.href='imagecompressor.html'">
-            <h2>Image Compressor</h2>
-            <i class="fa-solid fa-image"></i>
-            <p>Compress Your Images To Reduce Their Size</p>
-         </div>
-         <div class="tool-card" onclick="location.href='videocompressor.html'">
-            <h2>Video Compressor</h2>
-            <i class="fa-solid fa-film"></i>
-            <p>Compress Your Videos To Reduce Their Size</p>
-         </div>
-         <div class="tool-card" onclick="location.reload()">
-            <h2>More Coming Soon</h2>
-            <i class="fa-solid fa-ellipsis"></i>
-            <p>More Tools Will Be Added In The Future</p>
-         </div>
-         </div>
       </div>
-      <footer>
-         <p>&copy; 2026 Bora's Tools. All rights reserved.</p>
-         <div class="quick-links">
-            <a class="quicklinktag active" href="index.html">Home</a>
-            <a class="quicklinktag" href="filesharing.html">File Sharing</a>
-            <a class="quicklinktag" href="foldersharing.html">Folder Sharing</a>
-            <a class="quicklinktag" href="qrcodegenerator.html">QR Code Generator</a>
-            <a class="quicklinktag" href="youtubeconverter.html">YouTube Converter</a>
-            <a class="quicklinktag" href="imageconverter.html">Image Converter</a>
-            <a class="quicklinktag" href="videotoaudio.html">Video To Audio</a>
-            <a class="quicklinktag" href="spotifymusicdownloader.html">Spotify Music Downloader</a>
-            <a class="quicklinktag" href="urlshortener.html">Url Shortener</a>
-            <a class="quicklinktag" href="imagecompressor.html">Image Compressor</a>
-         </div>
-      </footer>
-      <script src="Js/changethemes.js"></script>
-   </body>
+
+      <div class="waveanimheader" onclick="location.reload()">
+        <span class="h-B">B</span>
+        <span class="h-O1">O</span>
+        <span class="h-R">R</span>
+        <span class="h-A">A</span>
+        <span class="h-S">'S</span>
+        <span class="h-space">-</span>
+        <span class="h-T">T</span>
+        <span class="h-O2">O</span>
+        <span class="h-O3">O</span>
+        <span class="h-L">L</span>
+        <span class="h-S2">S</span>
+      </div>
+
+      <nav class="nav" id="mainNav">
+        <a href="index.html" class="navlink" data-tool-link="home">Home</a>
+        <!-- recently used tools injected here by nav.js -->
+      </nav>
+
+      <div class="change-themes" id="themesPanel">
+        <div class="default" id="defaulttheme"></div>
+        <div class="white" id="whitetheme"></div>
+        <div class="purple" id="purpletheme"></div>
+        <div class="red" id="redtheme"></div>
+        <div class="blue" id="bluetheme"></div>
+        <div class="orange" id="orangetheme"></div>
+        <div class="pink" id="pinktheme"></div>
+        <div class="yellow" id="yellowtheme"></div>
+        <div class="black" id="blacktheme"></div>
+        <div class="cyan" id="cyantheme"></div>
+      </div>
+    </header>
+    <div class="home-container">
+      <span class="tools-below-title"
+        >All Of The Tools Below Are Made By Bora</span
+      >
+      <div class="tool-cards-container">
+        <div class="tool-card" onclick="location.href = 'filesharing.html'">
+          <h2>File Sharing</h2>
+          <i class="fa-solid fa-file"></i>
+          <p>Share Your Files Privately</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'foldersharing.html'">
+          <h2>Folder Sharing</h2>
+          <i class="fa-solid fa-folder"></i>
+          <p>Share Your Folders Privately</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'qrcodegenerator.html'">
+          <h2>QR Code Generator</h2>
+          <i class="fa-solid fa-qrcode"></i>
+          <p>Generate QR Codes For Your Links</p>
+        </div>
+        <div
+          class="tool-card"
+          onclick="location.href = 'youtubeconverter.html'"
+        >
+          <h2>Youtube Mp3 Converter</h2>
+          <i class="fa-solid fa-music"></i>
+          <p>Convert Youtube Videos To Mp3 Format</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'imageconverter.html'">
+          <h2>Image Converter</h2>
+          <i class="fa-solid fa-image"></i>
+          <p>Convert Images To Different Formats</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'videotoaudio.html'">
+          <h2>Video To Audio</h2>
+          <i class="fa-solid fa-film"></i>
+          <p>Convert Videos To Mp3 Format</p>
+        </div>
+        <div
+          class="tool-card"
+          onclick="location.href = 'spotifymusicdownloader.html'"
+        >
+          <h2>Spotify Music Downloader</h2>
+          <i class="fa-solid fa-music"></i>
+          <p>Download Music From Spotify</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'urlshortener.html'">
+          <h2>Url Shortener</h2>
+          <i class="fa-solid fa-link"></i>
+          <p>Shorten Your Long Links</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'imagecompressor.html'">
+          <h2>Image Compressor</h2>
+          <i class="fa-solid fa-image"></i>
+          <p>Compress Your Images To Reduce Their Size</p>
+        </div>
+        <div class="tool-card" onclick="location.href = 'videocompressor.html'">
+          <h2>Video Compressor</h2>
+          <i class="fa-solid fa-film"></i>
+          <p>Compress Your Videos To Reduce Their Size</p>
+        </div>
+        <div class="tool-card" onclick="location.reload()">
+          <h2>More Coming Soon</h2>
+          <i class="fa-solid fa-ellipsis"></i>
+          <p>More Tools Will Be Added In The Future</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2026 Bora's Tools. All rights reserved.</p>
+      <div class="quick-links">
+        <a class="quicklinktag active" href="index.html">Home</a>
+        <a class="quicklinktag" href="filesharing.html">File Sharing</a>
+        <a class="quicklinktag" href="foldersharing.html">Folder Sharing</a>
+        <a class="quicklinktag" href="qrcodegenerator.html"
+          >QR Code Generator</a
+        >
+        <a class="quicklinktag" href="youtubeconverter.html"
+          >YouTube Converter</a
+        >
+        <a class="quicklinktag" href="imageconverter.html">Image Converter</a>
+        <a class="quicklinktag" href="videotoaudio.html">Video To Audio</a>
+        <a class="quicklinktag" href="spotifymusicdownloader.html"
+          >Spotify Music Downloader</a
+        >
+        <a class="quicklinktag" href="urlshortener.html">Url Shortener</a>
+        <a class="quicklinktag" href="imagecompressor.html">Image Compressor</a>
+      </div>
+    </footer>
+    <script src="Js/changethemes.js"></script>
+    <script src="Js/nav.js"></script>
+  </body>
 </html>
